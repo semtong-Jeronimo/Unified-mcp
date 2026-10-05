@@ -4,13 +4,12 @@ import sys
 current_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.join(current_dir, "dart_module"))
 sys.path.append(os.path.join(current_dir, "ecos_module"))
+sys.path.append(os.path.join(current_dir, "onbid_module"))  # 👈 추가 1
 
 from fastmcp import FastMCP
 
-# 인스턴스 생성
 mcp = FastMCP("Unified-Connector")
 
-# 도구 등록
 try:
     from dart_tools import register_dart_tools
     register_dart_tools(mcp)
@@ -24,6 +23,14 @@ try:
     print("ECOS 도구 등록 성공")
 except Exception as e:
     print(f"ECOS 도구 로드 중 경고: {e}")
+
+# 👇 추가 2
+try:
+    from onbid_tools import register_onbid_tools
+    register_onbid_tools(mcp)
+    print("ONBID 도구 등록 성공")
+except Exception as e:
+    print(f"ONBID 도구 로드 중 경고: {e}")
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
