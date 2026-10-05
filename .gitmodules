@@ -4,3 +4,6 @@
 [submodule "ecos_module"]
 	path = ecos_module
 	url = https://github.com/semtong-Jeronimo/ecos.git
+[submodule "auction_module"]
+	path = auction_module
+	url = https://github.com/semtong-Jeronimo/court-auction.git
