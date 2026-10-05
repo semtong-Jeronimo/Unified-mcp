@@ -1,11 +1,15 @@
 import os
-from mcp.server.fastmcp import FastMCP
+import sys
 
-# 각각의 독립 저장소에서 도구 등록 함수 임포트
+# 서브모듈 폴더 경로를 파이썬 탐색 경로에 추가
+sys.path.append(os.path.join(os.path.dirname(__file__), "dart_module"))
+sys.path.append(os.path.join(os.path.dirname(__file__), "ecos_module"))
+
+from mcp.server.fastmcp import FastMCP
 from dart_tools import register_dart_tools
 from ecos_tools import register_ecos_tools
 
-# 통합 FastMCP 서버 인스턴스
+# 단일 MCP 인스턴스 생성
 mcp = FastMCP("Unified-Connector")
 
 # 두 도구 마운트

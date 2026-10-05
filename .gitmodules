@@ -1,0 +1,6 @@
+[submodule "dart_module"]
+	path = dart_module
+	url = https://github.com/semtong-Jeronimo/dart.git
+[submodule "ecos_module"]
+	path = ecos_module
+	url = https://github.com/semtong-Jeronimo/ecos.git
