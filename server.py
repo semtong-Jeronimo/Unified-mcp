@@ -4,7 +4,7 @@ import sys
 current_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.join(current_dir, "dart_module"))
 sys.path.append(os.path.join(current_dir, "ecos_module"))
-sys.path.append(os.path.join(current_dir, "onbid_module"))  # 👈 추가 1
+sys.path.append(os.path.join(current_dir, "onbid_module"))  
 
 from fastmcp import FastMCP
 
