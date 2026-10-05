@@ -24,9 +24,5 @@ except Exception as e:
     print(f"ECOS 도구 로드 중 경고: {e}")
 
 if __name__ == "__main__":
-    # Render 환경변수 PORT를 바인딩하고 host를 0.0.0.0으로 명시
-    import uvicorn
-    # fastmcp의 내장 sse / mcp 앱 인스턴스 실행
-    port = int(os.environ.get("PORT", 10000))
-    # mcp의 sse app을 uvicorn으로 직접 구동
-    uvicorn.run(mcp.sse_app(), host="0.0.0.0", port=port)
+    # 기존 DART 서버와 동일하게 http transport로 구동
+    mcp.run(transport="http")
